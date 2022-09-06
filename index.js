@@ -198,7 +198,7 @@ function handleClick(tile) {
 }
 
 // Socket Connection
-const url = 'http://localhost:3000'
+const url = 'https://quadro-a-quadro.herokuapp.com'
 const socket = io(url);
 
 var username = null;
