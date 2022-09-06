@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Kaiido/roundRect@main/roundRect.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <title>Quadro a Quadro</title>
+</head>
+<body>
+    <!-- <div>
+        <input id="username" type="text" name="username"/ placeholder="Username" required>
+        <button onclick="createGame()">Create Game</button>
+        <button onclick="finishGame()">Terminei!</button>
+        <input id="roomId" type="text" name="roomID" placeholder="roomId"/>
+        <button onclick="joinGame()">Join Game</button>
+        <button onclick="startGame()">Start</button>
+    </div> -->
+    
+    <div class="header">
+        <h1>Quadro a Quadro</h1>
+    </div>
+
+    <div class="container">
+        <div class="board">
+            <span class="username">Você</span>
+            <canvas id="game" width="400" height="400"></canvas>
+        </div>
+        
+
+        <div class="center-container">
+            <canvas id="gameAnswer" width="240" height="240"></canvas>
+
+            <div class="lobbyDiv" id="lobbyDiv">
+                <button class="button" id="create-button" onclick="createRoom()">CRIAR SALA</button>
+                <button class="button" id="join-button" onclick="showJoinGameForm()">ENTRAR EM UM JOGO</button>
+            </div>
+
+            <div class="joinGameDiv" id="joinForm">
+                <input placeholder="Código da sala" id="roomId" type="password"/>
+                <button class="button" onclick="joinGame()">ENTRAR</button>
+                <button class="button" onclick="backToLobby()">VOLTAR</button>
+            </div>
+
+            <div class="gameDiv" id="gameDiv">
+                <button class="button" id="invite-button" onclick="copyInvite()">COPIAR CÓDIGO</button>
+                <span id="inviteSpan">Copiado!</span>
+                <button class="button" onclick="backToLobby()">VOLTAR</button>
+            </div>
+
+            <div class="startDiv" id="startDiv">
+                <button class="button" id="start-button" onclick="start()">COMEÇAR</button>
+            </div>
+
+            <div class="waitDiv" id="waitDiv">
+                <span>Esperando o jogo começar...</span>
+            </div>
+
+            <div class="countdownDiv" id="countdownDiv">
+                <span>3</span>
+            </div>
+           
+        </div>
+
+        <div class="board">
+            <span class="username">Adversário</span>
+            <canvas id="enemy" width="400" height="400"></canvas>
+        </div>
+    
+        
+    </div>
+
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
